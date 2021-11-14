@@ -1,5 +1,6 @@
 const http = require('http');
-const port = process.env.PORT || 2345;
+const PORT = process.env.PORT || 2345;
+const HOST = process.env.HOST || '127.0.0.1'
 const path = require('path')
 const Search = require('./lib/Search')
 const dataFilePath = path.join(__dirname, 'data', 'cities_canada-usa.tsv')
@@ -89,6 +90,6 @@ module.exports = http.createServer(function (req, res) {
     res.writeHead(404, {'Content-Type': 'text/plain'});
     res.end();
   }
-}).listen(port, '127.0.0.1');
+}).listen(PORT, HOST);
 
-console.log('Server running at http://127.0.0.1:%d/suggestions', port);
+console.log(`Server running at http://${HOST}:${PORT}/suggestions`);

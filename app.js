@@ -1,5 +1,5 @@
-var http = require('http');
-var port = process.env.PORT || 2345;
+const http = require('http');
+const port = process.env.PORT || 2345;
 const path = require('path')
 const Search = require('./lib/Search')
 const dataFilePath = path.join(__dirname, 'data', 'cities_canada-usa.tsv')
